@@ -1,0 +1,37 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-secondary);
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+.footerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.left {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: var(--accent);
+}
+
+.right a {
+  font-size: 0.8rem;
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+.right a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}

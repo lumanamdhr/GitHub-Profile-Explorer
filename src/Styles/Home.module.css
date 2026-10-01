@@ -1,0 +1,247 @@
+.page {
+  min-height: calc(100vh - 64px);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: 100px 0 80px;
+  overflow: visible;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.25;
+}
+
+.glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(88, 166, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 5px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  color: var(--accent);
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.accent {
+  color: var(--accent);
+  display: inline-block;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+
+.searchWrapper {
+  animation: fadeUp 0.5s 0.3s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stats */
+.statsSection {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.statCard {
+  text-align: center;
+  padding: 24px;
+}
+
+.statValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Recent */
+.recentSection {
+  padding: 48px 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.clearBtn {
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.clearBtn:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.recentGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.recentChip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  transition: var(--transition);
+}
+
+.recentChip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.chipAt {
+  color: var(--text-muted);
+  margin-right: 2px;
+}
+
+/* Features */
+.featuresSection {
+  padding: 64px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.featuresSection .sectionTitle {
+  margin-bottom: 32px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.featureCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: var(--transition);
+}
+
+.featureCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.featureIcon {
+  font-size: 1.8rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.featureTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.featureDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .statValue { font-size: 1.6rem; }
+  .hero { padding: 64px 0 48px; }
+}
